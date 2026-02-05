@@ -62,7 +62,7 @@ Nejprve specifikujeme, jakého \emph{typu} bude daná struktura, tj. jaké bude 
     
 \end{definition}
 
-Často ale budeme signaturu zapisovat jen výčtem symbolů, bude-li jejich arita a to, zda jsou relační nebo funkční, zřejmé z kontextu. Uveďme několik příkladů signatur:
+Často ale budeme signaturu zapisovat jen výčtem symbolů, bude-li jejich arita a to, zda jsou relační, nebo funkční, zřejmé z kontextu. Uveďme několik příkladů signatur:
 \begin{itemize}
     \item $\langle E \rangle$ signatura \emph{grafů}: $E$ je binární relační symbol (struktury jsou uspořádané grafy),
     \item $\langle \leq \rangle$ signatura \emph{částečných uspořádání}: stejná jako signatura grafů, jen jiný symbol,\footnote{Ne každá struktura v této signatuře je částečné uspořádání, k tomu ještě potřebujeme, aby splňovala příslušné \emph{axiomy}.}
@@ -126,16 +126,16 @@ V této sekci představíme syntaxi predikátové logiky (prvního řádu). Srov
 
 \subsection{Jazyk}
 
-Při specifikaci jazyka nejprve stanovíme, jakého typu jsou struktury, které chceme popisovat, tj. určíme \emph{signaturu}. Dále přidáme informaci, zda je jazyk \emph{s rovností} nebo ne, tj. zda ve formulích můžeme také používat symbol `$=$' vyjadřující rovnost (identitu) prvků v doméně struktur.\footnote{Ve většině aplikací budeme používat jazyky s rovností. V některých speciálních oblastech se ale hodí rovnost nemít. Například pokud se zabýváme velmi rychlými výpočetními modely: zjistit, které proměnné se sobě rovnají, vyžaduje najít tranzitivní uzávěr rovností daných formulí, což je relativně výpočetně náročný problém.} Do jazyka patří následující:
+Při specifikaci jazyka nejprve stanovíme, jakého typu jsou struktury, které chceme popisovat, tj. určíme \emph{signaturu}. Dále přidáme informaci, zda je jazyk \emph{s rovností}, nebo ne, tj. zda ve formulích můžeme také používat symbol `$=$' vyjadřující rovnost (identitu) prvků v doméně struktur.\footnote{Ve většině aplikací budeme používat jazyky s rovností. V některých speciálních oblastech se ale hodí rovnost nemít. Například pokud se zabýváme velmi rychlými výpočetními modely: zjistit, které proměnné se sobě rovnají, vyžaduje najít tranzitivní uzávěr rovností daných formulí, což je relativně výpočetně náročný problém.} Do jazyka patří následující:
 \begin{itemize}
     \item spočetně mnoho \emph{proměnných} $x_0,x_1,x_2,\dots$ (ale píšeme také $x,y,z,\dots$; množinu všech proměnných označíme $\Var$),
-    \item \emph{relační}, \emph{funkční} a \emph{konstantní symboly} ze signatury, a symbol $=$ jde-li o jazyk s rovností,
+    \item \emph{relační}, \emph{funkční} a \emph{konstantní symboly} ze signatury a symbol $=$, jde-li o jazyk s rovností,
     \item \emph{univerzální} a \emph{existenční} \emph{kvantifikátory} $(\forall x),(\exists x)$ pro každou proměnnou $x\in\Var$,\footnote{Kvantifikátor chápeme jako jediný symbol, tedy $(\forall x)$ \emph{neobsahuje} proměnnou $x$. Někdy se také používají symboly $\forall_x,\exists_x$.}
     \item symboly pro logické spojky \( \neg,\landsymb,\lorsymb, \limpliessymb, \liffsymb \) a závorky \( (,) \).
 \end{itemize}
 Podobně jako symbol $\lbinsymb$ zastupující libovolnou binární logickou spojku budeme někdy psát $(Qx)$ pro kvantifikátor $(\forall x)$ nebo $(\exists x)$.
 
-Symbolům ze signatury, a $=$, říkáme \emph{mimologické}, ostatní jsou \emph{logické}. Jazyk musí obsahovat alespoň jeden relační symbol (buď rovnost, nebo v signatuře).\footnote{Jinak bychom v jazyce nemohli vybudovat žádná `tvrzení' (\emph{formule}), viz níže.}
+Symbolům ze signatury a $=$ říkáme \emph{mimologické}, ostatní jsou \emph{logické}. Jazyk musí obsahovat alespoň jeden relační symbol (buď rovnost nebo v signatuře).\footnote{Jinak bychom v jazyce nemohli vybudovat žádná `tvrzení' (\emph{formule}), viz níže.}
 
 Jazyk tedy specifikujeme pomocí signatury a informace `s rovností' (popř. `bez rovnosti'). Například:
 \begin{itemize}
@@ -713,7 +713,7 @@ Jak je tomu s platností formulí v podstruktuře? Uveďme několik jednoduchýc
 \end{example}
 
 \begin{example}
-    Teorie těles není otevřená. Jak si ukážeme později, není dokonce ani \emph{otevřeně axiomatizovatelná}, tj. neexistuje jí ekvivalentní otevřená teorie---kvantifikátoru v axiomu o existenci inverzního prvku se nelze nijak zbavit. Podstruktura tělesa reálných čísel $\mathbb Q$ na množině všech celých čísel $\mathbb Q\restriction\mathbb Z$ není těleso. (Je to tzv. \emph{okruh}, ale nenulové prvky kromě $1,-1$ nemají multiplikativní inverz, např. rovnice $2\cdot x=1$ nemá v $\mathbb Z$ řešení).
+    Teorie těles není otevřená. Jak si ukážeme později, není dokonce ani \emph{otevřeně axiomatizovatelná}, tj. neexistuje žádná jí ekvivalentní otevřená teorie---kvantifikátoru v axiomu o existenci inverzního prvku se nelze nijak zbavit. Podstruktura tělesa reálných čísel $\mathbb Q$ na množině všech celých čísel $\mathbb Q\restriction\mathbb Z$ není těleso. (Je to tzv. \emph{okruh}, ale nenulové prvky kromě $1,-1$ nemají multiplikativní inverz, např. rovnice $2\cdot x=1$ nemá v $\mathbb Z$ řešení).
 \end{example}
 
 \subsubsection{Generovaná podstruktura}
@@ -737,7 +737,7 @@ Co dělat, máme-li podmnožinu univerza, která \emph{není} uzavřená na funk
 Prozatím jsme konstruovali nové struktury změnou univerza. Můžeme ale také nechat univerzum stejné, a přidat resp. odebrat relace, funkce, a konstanty. Výsledku takové operace říkáme \emph{expanze} resp. \emph{redukt}. Všimněte si, že jde o strukturu v jiné signatuře.
 
 \begin{definition}[Expanze a redukt]
-    Mějme jazyky $L\subseteq L'$, $L$-strukturu $\A$, a $L'$-strukturu $\A'$ na stejné doméně $A=A'$. Jestliže je interpretace každého symbolu z $L$ [relačního, funkčního, konstantního] stejná [relace, funkce, konstanta] v $\A$ i v $\A'$ potom říkáme, že struktura $\A'$ je \emph{expanzí} struktury $\A$ do jazyka $L'$ (také říkáme, že je \emph{$L'$-expanzí}) a že struktura $\A$ je \emph{reduktem} struktury $\A'$ na jazyk $L$ (také říkáme, že je \emph{$L$-reduktem}).    
+    Mějme jazyky $L\subseteq L'$, $L$-strukturu $\A$ a $L'$-strukturu $\A'$ na stejné doméně $A=A'$. Jestliže je interpretace každého symbolu z $L$ [relačního, funkčního, konstantního] stejná [relace, funkce, konstanta] v $\A$ i v $\A'$ potom říkáme, že struktura $\A'$ je \emph{expanzí} struktury $\A$ do jazyka $L'$ (také říkáme, že je \emph{$L'$-expanzí}) a že struktura $\A$ je \emph{reduktem} struktury $\A'$ na jazyk $L$ (také říkáme, že je \emph{$L$-reduktem}).    
 \end{definition}
 
 \begin{example}
@@ -799,10 +799,10 @@ Mějme teorie $T,T'$ v jazyce $L$. Potom:
 Jak je tomu v případě, kdy teorie $T'$ je nad větším jazykem než $T$? Připomeňme situaci ve výrokové logice, popsanou v Pozorování \ref{observation:extensions-semantic-description-propositional}. Zformulujeme a dokážeme analogické tvrzení: Zatímco ve výrokové logice jsme přidávali hodnoty pro nové prvovýroky, resp. je zapomínali, v predikátové logice budeme expandovat resp. redukovat struktury, tj. přidávat nebo zapomínat interpretace relačních, funkčních, a konstantních symbolů. Princip obou tvrzení (i jejich důkazů) je ale stejný.
 
 \begin{proposition}\label{proposition:semantic-conditions-for-extensions}
-    Mějme jazyky $L\subseteq L'$, teorii $T$ v jazyce $L$, a teorii $T'$ v jazyce $L'$.
+    Mějme jazyky $L\subseteq L'$, teorii $T$ v jazyce $L$ a teorii $T'$ v jazyce $L'$.
     \begin{enumerate}[(i)]
         \item $T'$ je extenzí teorie $T$, právě když redukt každého modelu $T'$ na jazyk $L$ je modelem $T$.
-        \item Pokud je $T'$ extenzí teorie $T$, a každý model $T$ lze expandovat do jazyka $L'$ na nějaký model teorie $T'$, potom je $T'$ konzervativní extenzí teorie $T$.
+        \item Pokud je $T'$ extenzí teorie $T$ a každý model $T$ lze expandovat do jazyka $L'$ na nějaký model teorie $T'$, potom je $T'$ konzervativní extenzí teorie $T$.
     \end{enumerate}
 \end{proposition}
 \begin{remark}
@@ -811,7 +811,7 @@ Jak je tomu v případě, kdy teorie $T'$ je nad větším jazykem než $T$? Př
 %todo ukázat i opačnou implikaci?
 %$T'$ je konzervativní extenzí teorie $T$, právě když je extenzí, a každý model $T$ lze expandovat do jazyka $L'$ na nějaký model teorie $T'$.
 \begin{proof}
-    Nejprve dokažme (i): Mějme model $\A'$ teorie $T'$ a označme jako $\A$ jeho redukt na jazyk $L$. Protože $T'$ je extenzí teorie $T$, platí v $T'$, a tedy i v $\A'$, každý axiom $\varphi\in T$. Potom ale i $\A\models\varphi$ ($\varphi$ obsahuje jen symboly z jazyka $L$), tedy $\A$ je modelem $T$.
+    Nejprve dokažme (i): Mějme model $\A'$ teorie $T'$ a označme jako $\A$ jeho redukt na jazyk $L$. Protože $T'$ je extenzí teorie $T$, platí v $T'$, a tedy i v $\A'$ každý axiom $\varphi\in T$. Potom ale i $\A\models\varphi$ ($\varphi$ obsahuje jen symboly z jazyka $L$), tedy $\A$ je modelem $T$.
 
     Na druhou stranu, mějme $L$-sentenci $\varphi$ takovou, že $T\models\varphi$. Chceme ukázat, že $T'\models\varphi$. Pro libovolný model $\A'\in\M_{L'}(T')$ víme, že jeho $L$-redukt $\A$ je modelem $T$, tedy $\A\models\varphi$. Z toho plyne i $\A'\models\varphi$ (opět proto, že $\varphi$ je v jazyce $L$).
 

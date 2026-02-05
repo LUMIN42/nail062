@@ -46,7 +46,7 @@ Všimněme si nejprve, že jsou-li teorie $T$ a sentence $\varphi$ \emph{otevře
 
 Obecně se nám to ale nepodaří, problémy dělá zejména existenční kvantifikátor. Na rozdíl od výrokové logiky \emph{není} každá teorie ekvivalentní CNF formuli. Ukážeme si ale postup, kterým lze vždy najít \emph{ekvisplnitelnou} CNF formuli, tj. takovou, která je nesplnitelná, \emph{právě když} $T\cup\{\neg \varphi\}$ je nesplnitelná, což nám k důkazu sporem stačí. Této konstrukci se říká \emph{Skolemizace} a spočívá v nahrazení existenčně kvantifikovaných proměnných nově přidanými konstantními resp. funkčními symboly. 
 
-Například, formuli $(\exists x)\psi(x)$ nahradíme formulí $\psi(x/c)$, kde $c$ je nový konstantní symbol, který reprezentuje \emph{svědka}, tj. prvek, díky kterému je existenční kvantifikátor splněn. Protože takových prvků může být mnoho, ztrácíme \emph{ekvivalenci} teorií, platí ale, že je-li splnitelná původní formule, je splnitelná, i nová formule, a naopak.
+Například, formuli $(\exists x)\psi(x)$ nahradíme formulí $\psi(x/c)$, kde $c$ je nový konstantní symbol, který reprezentuje \emph{svědka}, tj. prvek, díky kterému je existenční kvantifikátor splněn. Protože takových prvků může být mnoho, ztrácíme \emph{ekvivalenci} teorií, platí ale, že je-li splnitelná původní formule, je splnitelná i nová formule a naopak.
 
 \begin{example}
   Máme-li $T=\{(\exists x)P(x),P(x)\liff Q(x)\}$ a $\varphi=(\exists x)Q(x)$, potom 
@@ -118,7 +118,7 @@ Celá konstrukce sestává z následujících kroků, které vysvětlíme níže
 
 \subsection{Prenexní normální forma}
 
-Nejprve ukážeme postup, jakým můžeme z libovolné formule `vytknout' kvantifikátory, tj. převést do tzv. \emph{prenexní normální formy}, která začíná posloupností kvantifikátorů, a pokračuje už jen volnou formulí.
+Nejprve ukážeme postup, jakým můžeme z libovolné formule `vytknout' kvantifikátory, tj. převést do tzv. \emph{prenexní normální formy}, která začíná posloupností kvantifikátorů a pokračuje už jen volnou formulí.
 
 \begin{definition}[PNF]
     Formule $\varphi$ je v \emph{prenexní normální formě (PNF)}, je-li tvaru
@@ -278,7 +278,7 @@ V této podsekci shrneme celý postup popsaný v předchozích podsekcích. Klí
     Každá teorie má otevřenou konzervativní extenzi.
 \end{theorem}
 \begin{proof}
-    Mějme $L$-teorii $T$. Každý axiom nahradíme jeho generálním uzávěrem (není-li to už sentence) a převedeme do PNF, tím získáme ekvivalentní teorii $T'$. Nyní nahradíme každý axiom teorie $T'$ jeho Skolemovou variantou. Tím získáme teorii $T''$ v rozšířeném jazyce $L'$. Z Lemmatu \ref{lemma:skolem-variant-conservative-extension} plyne, že $L$-redukt každého modelu $T''$ je modelem $T'$, tedy $T''$ je extenzí $T'$, a že každý model $T'$ lze expandovat do jazyka $L'$ na model $T''$, tedy jde o konzervativní extenzi. Teorie $T''$ je axiomatizovaná univerzálními sentencemi, odstraníme-li kvantifikátorové prefixy (tj. vezmeme-li jádra axiomů), získáme otevřenou teorii $T'''$, která je ekvivalentní s $T''$ a tedy je také konzervativní extenzí $T$.
+    Mějme $L$-teorii $T$. Každý axiom nahradíme jeho generálním uzávěrem (není-li to už sentence) a převedeme do PNF, tím získáme ekvivalentní teorii $T'$. Nyní nahradíme každý axiom teorie $T'$ jeho Skolemovou variantou. Tím získáme teorii $T''$ v rozšířeném jazyce $L'$. Z Lemmatu \ref{lemma:skolem-variant-conservative-extension} plyne, že $L$-redukt každého modelu $T''$ je modelem $T'$, tedy $T''$ je extenzí $T'$, a že každý model $T'$ lze expandovat do jazyka $L'$ na model $T''$, tedy jde o konzervativní extenzi. Teorie $T''$ je axiomatizovaná univerzálními sentencemi, odstraníme-li kvantifikátorové prefixy (tj. vezmeme-li jádra axiomů), získáme otevřenou teorii $T'''$, která je ekvivalentní s $T''$, a tedy je také konzervativní extenzí $T$.
 \end{proof}
 
 Ze sémantické charakterizace konzervativní extenze snadno plyne následující důsledek:
